@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}NLS Production{% endblock %}</title>
+  <meta name="description" content="Профессиональный звук для мероприятий: аренда, монтаж, инженер, запись, поддержка 24/7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+</head>
+<body class="theme-dark">
+  {% include 'partials/navbar.html' ignore missing %}
+
+  <main class="container">
+    {% include 'partials/flash.html' ignore missing %}
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'partials/footer.html' ignore missing %}
+</body>
+</html>
